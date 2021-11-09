@@ -5,9 +5,10 @@
 <div class="displaySegment" />
 
 <style>
-	/* .display {
-		display: grid;
-		grid-template-rows: 1fr 5fr 1fr;
-		gap: 5px;
-	} */
+	.displaySegment {
+		background-color: red;
+		width: auto;
+		height: auto;
+		border-radius: 2px;
+	}
 </style>

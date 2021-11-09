@@ -7,7 +7,7 @@
 			.toString()
 			.split("")
 			.map((iNum) => parseInt(iNum, 10));
-		console.log(numArray);
+		// console.log("Number converted to array : " + numArray);
 	};
 </script>
 
@@ -17,7 +17,7 @@
 		<h2><a href="https://501a.netlify.app">made with svelte by 501A</a></h2>
 		<p>
 			currently only supports integers. If you open the console you can see the
-			full list or arrays being rendered.
+			full binary array for each number.
 		</p>
 		<input type="number" bind:value={number} on:input={numArrayFunction} />
 	</div>
@@ -31,14 +31,6 @@
 </main>
 
 <style>
-	/* main {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-	}
-	main div {
-		width: 300px;
-	} */
-
 	h1,
 	h2 {
 		margin: 0;

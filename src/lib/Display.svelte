@@ -1,83 +1,81 @@
 <script lang="ts">
-	import HorizontalDisplay from "./HorizontalDisplay.svelte";
-	import VerticalDisplay from "./VerticalDisplay.svelte";
+	import { numBin } from "../bin";
+	import EmptySegment from "./EmptySegment.svelte";
+	import FilledSegment from "./FilledSegment.svelte";
 	export let num: any = 0;
+	let bin: any = numBin[num][num];
+	let indivBin: any = bin
+		.toString()
+		.split("")
+		.map((iNum) => parseInt(iNum, 10));
+	console.log("‎‍💻 Binary for " + num + " : " + bin);
+	// console.log("Array form : " + indivBin);
+	let a: number = indivBin[0];
+	let b: number = indivBin[1];
+	let c: number = indivBin[2];
+	let d: number = indivBin[3];
+	let e: number = indivBin[4];
+	let f: number = indivBin[5];
+	let g: number = indivBin[6];
 </script>
 
 <div class="display">
-	<div class="emptySegment" />
-	{#if num === 1}
-		<div class="emptySegment" />
-	{:else if num === 4}
-		<div class="emptySegment" />
+	<!-- A -->
+	<EmptySegment />
+	{#if a === 1}
+		<FilledSegment />
 	{:else}
-		<HorizontalDisplay />
+		<EmptySegment />
 	{/if}
+	<EmptySegment />
 
-	<div class="emptySegment" />
-	{#if num === 1}
-		<div class="emptySegment" />
-	{:else if num === 2}
-		<div class="emptySegment" />
-	{:else if num === 3}
-		<div class="emptySegment" />
-	{:else if num === 7}
-		<div class="emptySegment" />
+	<!-- F -->
+	{#if f === 1}
+		<FilledSegment />
 	{:else}
-		<VerticalDisplay />
+		<EmptySegment />
 	{/if}
 	<div class="emptyCenter" />
-	{#if num === 5}
-		<div class="emptySegment" />
-	{:else if num === 6}
-		<div class="emptySegment" />
+
+	<!-- B -->
+	{#if b === 1}
+		<FilledSegment />
 	{:else}
-		<VerticalDisplay />
+		<EmptySegment />
 	{/if}
-	<div class="emptySegment" />
-	{#if num === 0}
-		<div class="emptySegment" />
-	{:else if num === 1}
-		<div class="emptySegment" />
-	{:else if num === 7}
-		<div class="emptySegment" />
+	<EmptySegment />
+
+	<!-- G -->
+	{#if g === 1}
+		<FilledSegment />
 	{:else}
-		<HorizontalDisplay />
+		<EmptySegment />
 	{/if}
-	<div class="emptySegment" />
-	{#if num === 1}
-		<div class="emptySegment" />
-	{:else if num === 3}
-		<div class="emptySegment" />
-	{:else if num === 4}
-		<div class="emptySegment" />
-	{:else if num === 5}
-		<div class="emptySegment" />
-	{:else if num === 7}
-		<div class="emptySegment" />
-	{:else if num === 9}
-		<div class="emptySegment" />
+	<EmptySegment />
+
+	<!-- E -->
+	{#if e === 1}
+		<FilledSegment />
 	{:else}
-		<VerticalDisplay />
+		<EmptySegment />
 	{/if}
 	<div class="emptyCenter" />
-	{#if num === 2}
-		<div class="emptySegment" />
-	{:else}
-		<VerticalDisplay />
-	{/if}
 
-	<div class="emptySegment" />
-	{#if num === 1}
-		<div class="emptySegment" />
-	{:else if num === 4}
-		<div class="emptySegment" />
-	{:else if num === 7}
-		<div class="emptySegment" />
+	<!-- C -->
+	{#if c === 1}
+		<FilledSegment />
 	{:else}
-		<HorizontalDisplay />
+		<EmptySegment />
 	{/if}
-	<div class="emptySegment" />
+	<EmptySegment />
+
+	<!-- D -->
+	{#if d === 1}
+		<FilledSegment />
+	{:else}
+		<EmptySegment />
+	{/if}
+	<EmptySegment />
 </div>
 
 <style>
@@ -92,12 +90,6 @@
 	.emptyCenter {
 		background-color: black;
 		height: 40px;
-		border-radius: 2px;
-	}
-	.emptySegment {
-		background-color: black;
-		min-width: 10px;
-		min-height: 10px;
 		border-radius: 2px;
 	}
 </style>
